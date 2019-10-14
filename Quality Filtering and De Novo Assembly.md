@@ -3,9 +3,9 @@ gdown.pl https://drive.google.com/file/d/1dJHIeN-7pY9nDAz3Ia8QObJvTjbj-9HY/edit 
 gdown.pl https://drive.google.com/file/d/1n_rpyjTiZjdKW4ICZDYYpf-osMIqAi71/edit GAB_R2.fastq.gz
 >The gdown.pl command is used to obtain the raw reads of our selected bacterial strains from google drive and save them as fastq.gz files.
 
-fastqc GAB_R1.fastq.gz everything but sequence length distribution is good (yellow exclamation point)
+fastqc GAB_R1.fastq.gz
 
-fastqc GAB_R2.fastq.gz per base sequence quality, per base sequence content, and sequence length distribution have yellow exclamation point
+fastqc GAB_R2.fastq.gz
 >fastqc is used on the downloaded raw read files to assess the quality of the reads. Once the assessment is complete, the created html file can be viewed on a browser using WinSCP or a similar program.
 
 cutadapt -q 20,20 -a CTGTCTCTTATACACATCTCCGAGCCCACGAGAC -A CTGTCTCTTATACACATCTGACGCTGCCGACGA -m 50 --max-n 0 -o GAB_R1.cutadapt.fastq -p GAB_R2.cutadapt.fastq GAB_R1.fastq.gz GAB_R2.fastq.gz
